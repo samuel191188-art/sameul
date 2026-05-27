@@ -1,2 +1,109 @@
-.board { display: grid; grid-template-columns: repeat(3, 100px); gap: 5px; justify-content: center; margin-top: 20px; }
-.cell { width: 100px; height: 100px; border: 2px solid #333; font-size: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; background: white; }
+/* 頁面整體背景 */
+body {
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    color: #2c3e50;
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+}
+
+#status {
+    color: #34495e;
+    font-size: 1.2rem;
+    margin: 20px 0 0 0;
+    font-weight: 600;
+}
+
+/* 計分板樣式 */
+.scoreboard {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+    background: white;
+    padding: 10px 30px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.score-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.label {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin-bottom: 2px;
+}
+
+.score {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* 遊戲外框 */
+.board { 
+    display: grid; 
+    grid-template-columns: repeat(3, 90px); 
+    gap: 10px; 
+    padding: 15px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* 棋格樣式 */
+.cell { 
+    width: 90px; 
+    height: 90px; 
+    background: #f8f9fa; 
+    border-radius: 12px;
+    font-size: 40px; 
+    font-weight: bold;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer; 
+    transition: all 0.2s ease;
+}
+
+.cell:hover { 
+    background: #e8f4fd; 
+    transform: scale(1.05);
+}
+
+/* O 和 X 的顏色分流 */
+.cell.o-style { color: #3498db; }
+.cell.x-style { color: #e74c3c; }
+
+/* 按鈕美化 */
+button {
+    margin-top: 20px;
+    padding: 12px 35px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: #34495e;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.2s;
+}
+
+button:hover {
+    background: #2c3e50;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(0,0,0,0.15);
+}
